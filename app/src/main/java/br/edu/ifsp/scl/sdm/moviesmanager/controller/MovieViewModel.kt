@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.room.Room
 import br.edu.ifsp.scl.sdm.moviesmanager.model.database.MovieDatabase
-import br.edu.ifsp.scl.sdm.moviesmanager.model.entity.MovieProperties
+import br.edu.ifsp.scl.sdm.moviesmanager.model.entity.Movie
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -20,10 +20,10 @@ class MovieViewModel(application: Application): ViewModel() {
     ).build().getMovieDao()
 
     //objeto que observará o Fragment para atualizar a lista de filmes
-    val moviesMld = MutableLiveData<List<MovieProperties>>()
+    val moviesMld = MutableLiveData<List<Movie>>()
 
 
-    fun insertMovie(movie: MovieProperties) {
+    fun insertMovie(movie: Movie) {
         CoroutineScope(Dispatchers.IO).launch {
             movieDaoImpl.createMovie(movie)
         }
@@ -36,13 +36,13 @@ class MovieViewModel(application: Application): ViewModel() {
         }
     }
 
-    fun editMovie(movie: MovieProperties) {
+    fun editMovie(movie: Movie) {
         CoroutineScope(Dispatchers.IO).launch {
             movieDaoImpl.updateMovie(movie)
         }
     }
 
-    fun removeMovie(movie: MovieProperties) {
+    fun removeMovie(movie: Movie) {
         CoroutineScope(Dispatchers.IO).launch {
             movieDaoImpl.deleteMovie(movie)
         }

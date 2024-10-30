@@ -8,7 +8,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 @Entity(tableName = MovieDao.MOVIE_TABLE)
-data class MovieProperties(
+data class Movie(
     @PrimaryKey
     var name: String, // Nome único do filme
     var year: Int, // Ano de lançamento do filme
