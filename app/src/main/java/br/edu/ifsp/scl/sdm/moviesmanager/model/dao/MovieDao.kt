@@ -5,7 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
-import br.edu.ifsp.scl.sdm.moviesmanager.model.entity.MovieProperties
+import br.edu.ifsp.scl.sdm.moviesmanager.model.entity.Movie
 
 @Dao
 interface MovieDao {
@@ -14,17 +14,17 @@ interface MovieDao {
     }
 
     @Insert
-    fun insertMovie(movie: MovieProperties)
+    fun insertMovie(movie: Movie)
 
     @Query("SELECT * FROM $MOVIE_TABLE")
-    fun retrieveMovies(): List<MovieProperties>
+    fun retrieveMovies(): List<Movie>
 
     @Update
-    fun updateMovie(movie: MovieProperties)
+    fun updateMovie(movie: Movie)
 
     @Delete
-    fun deleteMovie(movie: MovieProperties)
+    fun deleteMovie(movie: Movie)
 
     @Query("SELECT * FROM $MOVIE_TABLE WHERE genre = :genre")
-    fun retrieveMoviesByGenre(genre: String): List<MovieProperties>
+    fun retrieveMoviesByGenre(genre: String): List<Movie>
 }

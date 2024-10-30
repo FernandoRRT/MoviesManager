@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import br.edu.ifsp.scl.sdm.moviesmanager.databinding.ActivityMainBinding
 import br.edu.ifsp.scl.sdm.moviesmanager.R
 
-class MainActivity : AppCompatActivity() {
+class   MainActivity : AppCompatActivity() {
     private val amb by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
