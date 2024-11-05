@@ -80,7 +80,6 @@ class MovieFragment : Fragment() {
 
                 // Verificação se o checkbox watched está selecionado para atribuir rating
 
-
                 val ratingText = ratingEt.text.toString().trim()
                 if (ratingText.isNotEmpty()) {
                     if (!watchedCb.isChecked) {
@@ -95,7 +94,7 @@ class MovieFragment : Fragment() {
                         }
                     }
                 }
-                val rating = ratingText.toInt()
+                val rating = ratingEt.text.toString().takeIf { it.isNotEmpty() }?.toInt()
 
                 // Verificações para outros campos opcionais
                 val duration = durationEt.text.toString().takeIf { it.isNotEmpty() }?.toInt()
