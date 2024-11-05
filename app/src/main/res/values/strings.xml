@@ -11,4 +11,11 @@
     <string name="add_movie">Add movie</string>
     <string name="delete_movie">Delete movie</string>
     <string name="edit_movie">Edit Movie</string>
+    <string name="movie_list">Movie List</string>
+    <string name="movie_details">Movie details</string>
+    <string name="rating_0_10">Rating 0-10</string>
+    <string name="movie_name_cannot_be_empty">Movie name cannot be empty</string>
+    <string name="release_year_cannot_be_empty">Release Year cannot be empty</string>
+    <string name="watch_the_movie_to_rate_it">Watch the movie to rate it</string>
+    <string name="rate_the_movie_from_0_to_10">Rate the movie from 0 to 10</string>
 </resources>

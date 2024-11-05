@@ -18,7 +18,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/navigationHostFcv"
         android:name="androidx.navigation.fragment.NavHostFragment"

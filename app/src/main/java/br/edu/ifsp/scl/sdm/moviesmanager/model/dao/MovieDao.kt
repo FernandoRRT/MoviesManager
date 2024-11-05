@@ -14,7 +14,7 @@ interface MovieDao {
     }
 
     @Insert
-    fun insertMovie(movie: Movie)
+    fun createMovie(movie: Movie)
 
     @Query("SELECT * FROM $MOVIE_TABLE")
     fun retrieveMovies(): List<Movie>

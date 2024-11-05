@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="genres_array">
-        <item>Ação</item>
-        <item>Comédia</item>
+        <item>Select a Movie Genre</item>
+        <item>Action</item>
+        <item>Comedy</item>
         <item>Drama</item>
-        <item>Fantasia</item>
+        <item>Fantasy</item>
         <item>Terror</item>
-        <!-- Adicione mais itens conforme necessário -->
     </string-array>
 </resources>

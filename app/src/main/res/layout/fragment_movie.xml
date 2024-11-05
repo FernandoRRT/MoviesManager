@@ -49,7 +49,7 @@
                 android:inputType="number" />
 
             <EditText
-                android:id="@+id/publisherEt"
+                android:id="@+id/studioEt"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:textSize="18sp"
@@ -65,8 +65,17 @@
                 android:padding="12dp"
                 android:entries="@array/genres_array" />
 
+            <EditText
+                android:id="@+id/ratingEt"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:textSize="18sp"
+                android:padding="12dp"
+                android:hint="@string/rating_0_10"
+                android:inputType="number" />
+
             <CheckBox
-                android:id="@+id/doneCb"
+                android:id="@+id/watchedCb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"

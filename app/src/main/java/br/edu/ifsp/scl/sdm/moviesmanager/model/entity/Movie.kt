@@ -11,10 +11,15 @@ import kotlinx.parcelize.Parcelize
 data class Movie(
     @PrimaryKey
     var name: String, // Nome único do filme
-    var year: Int, // Ano de lançamento do filme
-    var studio: String, // Produtora ou estúdio
-    var duration: Int, // Tempo de duração em minutos
-    var watched: Boolean = false, // Flag para indicar se foi assistido
-    var rating: Float? = null, // Nota do usuário (0-10)
-    var genre: String // Gênero do filme
-) : Parcelable
+    var year: Int? = null, // Ano de lançamento do filme
+    var duration: Int? = null, // Tempo de duração em minutos
+    var studio: String? = null, // Produtora ou estúdio
+    var genre: String, // Gênero do filme
+    var rating: Int? = null, // Nota do usuário (0-10)
+    var watched: Int = MOVIE_DONE_FALSE // Flag para indicar se foi assistido
+) : Parcelable {
+    companion object {
+        const val MOVIE_DONE_TRUE = 1
+        const val MOVIE_DONE_FALSE = 0
+    }
+}
