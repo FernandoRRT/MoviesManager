@@ -26,11 +26,11 @@ class MovieAdapter(
                             R.menu.context_menu_movie,
                             menu
                         )
-                        menu?.findItem(R.id.deleteMovieMi)?.setOnMenuItemClickListener {
+                        menu?.findItem(R.id.deleteMovieCm)?.setOnMenuItemClickListener {
                             onMovieClickListener.onRemoveMovieMenuItemClick(adapterPosition)
                             true
                         }
-                        menu?.findItem(R.id.editMovieMi)?.setOnMenuItemClickListener {
+                        menu?.findItem(R.id.editMovieCm)?.setOnMenuItemClickListener {
                             onMovieClickListener.onEditMovieMenuItemClick(adapterPosition)
                             true
                         }

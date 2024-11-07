@@ -18,4 +18,6 @@
     <string name="release_year_cannot_be_empty">Release Year cannot be empty</string>
     <string name="watch_the_movie_to_rate_it">Watch the movie to rate it</string>
     <string name="rate_the_movie_from_0_to_10">Rate the movie from 0 to 10</string>
+    <string name="order_by_name">Order by name</string>
+    <string name="order_by_rating">Order by rating</string>
 </resources>

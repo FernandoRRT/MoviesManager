@@ -33,6 +33,8 @@ class MovieFragment : Fragment() {
         ftb = FragmentMovieBinding.inflate(inflater, container, false)
 
         val receivedMovie = navigationArgs.movie
+        val editMode = navigationArgs.movie?.name.isNullOrEmpty()
+
         receivedMovie?.also { movie ->
             with(ftb) {
                 nameEt.setText(movie.name)
@@ -46,7 +48,7 @@ class MovieFragment : Fragment() {
                 watchedCb.isChecked = movie.watched == MOVIE_DONE_TRUE
 
                 navigationArgs.editMovie.also { editMovie ->
-                    nameEt.isEnabled = editMovie
+                    nameEt.isEnabled = editMode
                     yearEt.isEnabled = editMovie
                     durationEt.isEnabled = editMovie
                     studioEt.isEnabled = editMovie

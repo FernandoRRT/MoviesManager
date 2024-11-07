@@ -12,9 +12,11 @@ class   MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(amb.root)
 
         setSupportActionBar(amb.mainTb)
         supportActionBar?.title = getString(R.string.app_name)
+        supportActionBar?.setBackgroundDrawable(resources.getDrawable(R.color.md_theme_primary))
     }
 }

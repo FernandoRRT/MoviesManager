@@ -4,6 +4,9 @@ import android.app.Activity
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
@@ -50,6 +53,7 @@ class MainFragment : Fragment(), OnMovieClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
 
         setFragmentResultListener(MOVIE_FRAGMENT_REQUEST_KEY) { requestKey, bundle ->
             if (requestKey == MOVIE_FRAGMENT_REQUEST_KEY) {
@@ -96,6 +100,36 @@ class MainFragment : Fragment(), OnMovieClickListener {
         }
 
         movieViewModel.getMovies()
+    }
+
+    @Deprecated("Deprecated in Java")
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.sort_menu, menu) // Inflando o sort_menu para o MainFragment
+    }
+
+    @Deprecated("Deprecated in Java")
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.orderByNameMi -> {
+                orderMoviesByName()
+                true
+            }
+            R.id.orderByRatingMi -> {
+                orderMoviesByRating()
+                true
+            }
+            else -> false
+        }
+    }
+
+    private fun orderMoviesByName() {
+        movieList.sortBy { it.name }
+        movieAdapter.notifyDataSetChanged()
+    }
+
+    private fun orderMoviesByRating() {
+        movieList.sortByDescending { it.rating }
+        movieAdapter.notifyDataSetChanged()
     }
 
     override fun onCreateView(
